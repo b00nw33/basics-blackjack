@@ -1,0 +1,126 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Crete Round", serif;
+  background: url("https://miro.medium.com/max/2000/1*ybtr6fP7R-hjRBaoo9x3sA.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  user-select: none;
+}
+
+h1 {
+  text-align: center;
+  transform: rotate(-5deg);
+}
+
+.table {
+  margin: 4rem 8rem;
+  display: grid;
+  grid-template-columns: repeat(4, 4rem);
+  grid-template-rows: 6rem 2rem 2rem 6rem 2rem;
+  border: 5px solid rgb(92, 62, 6);
+  outline: 0.5rem solid rgb(119, 110, 26);
+  outline-offset: 0.2rem;
+  /* box-shadow: -10px -10px 15px rgba(255, 255, 255, 0.9),
+    8px 8px 25px rgba(0, 0, 0, 0.5); */
+  box-shadow: 0 0 0 2rem rgb(110, 236, 105, 0.25);
+  gap: 2rem;
+  justify-content: center;
+  padding: 1rem;
+  border-radius: 4rem;
+  background-color: rgb(204, 41, 41);
+  background-image: repeating-linear-gradient(
+    223deg,
+    rgba(255, 255, 255, 0.25),
+    rgba(255, 255, 255, 0.25) 1px,
+    transparent 0px,
+    transparent 2px
+  );
+  background-size: 20px;
+  min-width: 40rem;
+}
+
+.deck {
+  height: 100%;
+  width: 4rem;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  border-radius: 0.5rem;
+  color: white;
+  background-color: rgb(37, 59, 134);
+  outline: 0.1rem solid white;
+  outline-offset: -0.2rem;
+}
+
+.text {
+  grid-column: span 4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(204, 41, 41, 0.3);
+}
+
+.card {
+  font-size: 4rem;
+  padding-top: 0.7rem;
+  padding-right: 0.4rem;
+  background-color: white;
+  display: flex;
+  position: relative;
+  justify-content: right;
+  align-items: center;
+  border: 1px solid black;
+  border-radius: 0.5rem;
+  flex: 0 0 4rem;
+  transition: transform 0.25s;
+}
+
+.card.red {
+  color: red;
+}
+
+.card.black {
+  color: black;
+}
+
+.card::before,
+.card::after {
+  position: absolute;
+  content: attr(data-value);
+}
+
+.card::before {
+  font-size: 2rem;
+  top: -0.3rem;
+  left: 0.3rem;
+}
+
+.card::after {
+  font-size: 0.8rem;
+  bottom: 0rem;
+  right: 0.5rem;
+  transform: rotate(180deg);
+}
+
+.card-slot {
+  display: flex;
+}
+
+.player-card-slot {
+  grid-column: span 4;
+}
+
+.computer-card-slot {
+  grid-column: span 3;
+}
+
+.flip {
+  color: rgb(37, 59, 134);
+}
