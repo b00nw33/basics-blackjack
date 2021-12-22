@@ -21,15 +21,20 @@
     <div class="table">
       <div class="deck">52</div>
       <div class="computer-card-slot card-slot"></div>
-      <div class="text main-text">Please place your bet</div>
-      <div class="text player-bet">
-        Bet:
-        <div class="edittable">2</div>
+
+      <div class="text main-text">Double-click to change your bet</div>
+
+      <div class="text">
+        <div id="player-bet" class="edittable" data-value="Bet: ">2</div>
         <button id="blackjack-start-button">Start</button>
       </div>
+
       <div class="player-card-slot card-slot"></div>
-      <div class="text player-credits">
-        Credits: 100
+
+      <div class="text">
+        <div id="player-credits" class="edittable" data-value="Credits: ">
+          100
+        </div>
         <button id="blackjack-hit-button">Hit</button>
         <button id="blackjack-stand-button">Stand</button>
       </div>
