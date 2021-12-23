@@ -33,7 +33,7 @@ document.querySelectorAll(".edittable").forEach(function (node) {
     input.onblur = function () {
       var val = this.value;
 
-      if (val >= +credits.textContent || val <= 0)
+      if (val > +credits.textContent || val <= 0)
         text.textContent = "Please enter a valid bet.";
 
       this.parentNode.textContent = val;
@@ -119,7 +119,7 @@ function dealerFinish(addCards) {
   if (points(dealerHand) === 21 && dealerHand.length === 2) {
     //player also bj
     if (playerPoints === 21 && playerHand.length === 2) {
-      text.textContent = "Blackjack push!";
+      text.textContent = "Blackjack tie!";
       addCredits(1);
     } else text.textContent = "Dealer has blackjack!";
   } //player bj
@@ -146,7 +146,7 @@ function dealerFinish(addCards) {
         addCredits(2);
       } else {
         if (playerPoints === points(dealerHand)) {
-          text.textContent = "You push!";
+          text.textContent = "You tied!";
           addCredits(1);
         } else if (playerPoints > points(dealerHand)) {
           text.textContent = "You win!";
@@ -183,7 +183,7 @@ btnStart.addEventListener("click", function () {
   text.textContent = "Hit/Stand";
   console.clear();
 
-  if (+bet.textContent >= +credits.textContent || +bet.textContent <= 0) {
+  if (+bet.textContent > +credits.textContent || +bet.textContent <= 0) {
     text.textContent = "Please enter a valid bet.";
     return;
   }
